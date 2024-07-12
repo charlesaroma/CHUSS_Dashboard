@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* #000000 title text
+#ABAAAF subtitle text
+#838389 gray
+#464F60 username
+#20202A button
+#A1080B red
+#FCEDED  */
+
+
+/* Avenir Font */
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd Medium'), url('../assets/Fonts/avenir/AvenirLTStd-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd Black'), url('../assets/Fonts/avenir/AvenirLTStd-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd Heavy'), url('../assets/Fonts/avenir/AvenirLTStd-Heavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd';
+  src: local('AvenirLTStd Roman'), url('../assets/Fonts/avenir/AvenirLTStd-Roman.otf') format('opentype');
+}
+
+/* Inter Font */
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter ExtraLight'), url('../assets/Fonts/Inter/Inter-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter Light'), url('../assets/Fonts/Inter/Inter-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter Medium'), url('../assets/Fonts/Inter/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter Regular'), url('../assets/Fonts/Inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter SemiBold'), url('../assets/Fonts/Inter/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter Bold'), url('../assets/Fonts/Inter/Inter-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter ExtraBold'), url('../assets/Fonts/Inter/Inter-ExtraBold.ttf') format('truetype');
+}
