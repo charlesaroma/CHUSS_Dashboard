@@ -7,8 +7,20 @@ import Upload from '../../assets/Icons/upload-file.png';
 import ViewReports from '../../assets/Icons/Vector.png';
 import FolderIcon from '../../assets/Icons/foldericon.png';
 import FolderIcon2 from '../../assets/Icons/foldericon2.png';
+import InfoIcon from '../../assets/Icons/infoicon.png';
+// import ColumnSorting from '../../assets/Icons/column-sorting.png'; //
 
 const Home = () => {
+  // student data
+  const students = [
+    { id: 1, regNo: "[YEAR]/[CODE]/[ID]", name: "Regan Ssenjovu", topic: "The Challenges of Intellectual Property", semester: "Semester1 2020/21", type: "Masters", school: "Psychology" },
+    { id: 2, regNo: "[YEAR]/[CODE]/[ID]", name: "Jonathan Opega", topic: "The Challenges of Intellectual Property", semester: "Semester1 2020/21", type: "Ph.D", school: "Psychology" },
+    { id: 3, regNo: "[YEAR]/[CODE]/[ID]", name: "Sabrina Nakigozi", topic: "The Challenges of Intellectual Property", semester: "Semester1 2020/21", type: "Masters", school: "Psychology" },
+    { id: 4, regNo: "[YEAR]/[CODE]/[ID]", name: "Norbert Obol", topic: "The Challenges of Intellectual Property", semester: "Semester1 2020/21", type: "Ph.D", school: "Psychology" },
+    { id: 5, regNo: "[YEAR]/[CODE]/[ID]", name: "Marvin Ssendege", topic: "The Challenges of Intellectual Property", semester: "Semester1 2020/21", type: "Masters", school: "Psychology" },
+    { id: 6, regNo: "[YEAR]/[CODE]/[ID]", name: "Jeff Ssekiranda", topic: "The Challenges of Intellectual Property", semester: "Semester1 2020/21", type: "Ph.D", school: "Psychology" },
+  ];
+
   return (
     <section className="relative w-screen h-screen bg-[#FBFBFB] overflow-x-hidden flex">
       {/* Sidebar navigation */}
@@ -87,12 +99,58 @@ const Home = () => {
             ].map((item, index) => (
               <div key={index} className="w-[22%] h-[150px] bg-[#FFFFFF] rounded-xl flex flex-col items-center justify-center gap-4 px-4">
                 <div className="text-start">
-                  <p className="text-lg font-semibold">{item.title}</p>
-                  <p className="text-[40px] font-bold">{item.count}</p>
+                  <p className="text-lg font-semibold text-[#1A2240]">{item.title}</p>
+                  <p className="text-[40px] font-bold text-[#1A2240]">{item.count}</p>
                   <p className="text-[10px] text-[#868FA0]">{item.desc}</p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Table */}
+          <div className="mt-8">
+            <h2 className="text-lg font-inter font-semibold mb-4 text-[#1A2240]">Students Recently Assigned</h2>
+            <div className="flex mb-4">
+              <div className="w-[8%]">
+                <p className="text-[14px] font-semibold text-[#3A3A43]">All: {students.length}</p>
+              </div>
+              <div className="w-[8%]">
+                <p className="text-[14px] font-semibold text-[#3A3A43]">Masters: {students.filter(student => student.type === 'Masters').length}</p>
+              </div>
+              <div className="w-[8%]">
+                <p className="text-[14px] font-semibold text-[#3A3A43]">Ph.D: {students.filter(student => student.type === 'Ph.D').length}</p>
+              </div>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border border-gray-200">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">#</th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60] uppercase">Student_Reg_No</th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">Student Name</th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">Topic</th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">Semester <span className="ml-1 text-sm text-[#A1A9B8]"><img src={InfoIcon} alt="Info Icon" className="w-3 h-3 inline-block" /></span></th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">Status</th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">TYPE</th>
+                    <th className="px-4 py-2 text-left border-b border-gray-200 text-[12px] text-[#5E5C60]">SCHOOL NAME</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {students.map((student, index) => (
+                    <tr key={student.id} className={index % 2 === 0 ? 'bg-gray-50 text-red' : ''}>
+                      <td className="px-4 py-2 text-sm text-[#15151D]">{index + 1}</td>
+                      <td className="px-4 py-2 text-xs leading-3 text-[#5E5C60]">{student.regNo}</td>
+                      <td className="px-4 py-2 text-sm font-semibold text-[#15151D]">{student.name}</td>
+                      <td className="px-4 py-2 text-sm font-semibold text-[#15151D]">{student.topic}</td>
+                      <td className="px-4 py-2 text-xs leading-3 text-[#5E5C60]"><span className='bg-[#EEEEEF] border rounded-lg px-2 py-1'>Semester1 2020/21</span></td>
+                      <td className="px-4 py-2 text-xs leading-3 text-[#AA5B00]"><span className='bg-[#FCF2E6] border rounded-lg px-2 py-1'>In Review</span></td>
+                      <td className="px-4 py-2 text-sm leading-3 text-[#5E5C60] text-center"><span className='bg-[#EEEEEF] border rounded-lg px-2 py-1'>{student.type}</span></td>
+                      <td className="px-4 py-2 text-sm text-[#15151D] font-semibold">{student.school}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

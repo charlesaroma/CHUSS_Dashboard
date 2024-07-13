@@ -17,7 +17,7 @@ const MenuItemData = [
 const SidebarNav = () => {
   return (
     <div className="fixed w-[72px] h-screen bg-[#1A1A24] flex flex-col items-center gap-8">
-      <img src={Logo} alt="Logo" className="w-[60px] h-[60px] mt-5" />
+      <img src={Logo} alt="Logo" className="w-[50px] h-[50px] mt-5" />
       <div className="text-[#D4D4D6] flex flex-col gap-4">
         {MenuItemData.map((item, index) => (
           <NavLink
